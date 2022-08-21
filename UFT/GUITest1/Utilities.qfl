@@ -1,0 +1,55 @@
+﻿' fixes the URL (DataTable) to compare with the WebElement
+Function fixUrl (url)
+	fixUrl = Split(url,".",3)(1) & ".com"
+End Function
+
+'Fixes the Contact Phone (DataTable) to compare with the WebElement
+Function fixContactPhone(contactPhone)
+	fixContactPhone= Right(contactPhone, 8)
+End Function
+
+'Change to min
+Function changeToMin(times)
+Dim minutes
+	If InStr(times,"hr") <> 0 Then
+		minutes = Split(times," ")(0) * 60
+		print("tiene hora")
+	End If
+	changeToMin = minutes + Split(times, " ")(0)
+End Function
+
+
+
+
+
+
+'Go to Directions
+
+
+
+''creation of table and save Thales Colombia checkpoints to confirm
+'DataTable.AddSheet ("ThalesColombiaCheckpoints").AddParameter "Address", Address
+'DataTable.AddSheet ("ThalesColombiaCheckpoints").AddParameter "URL",url
+'DataTable.AddSheet ("ThalesColombiaCheckpoints").AddParameter "ContactPhone",contactPhone
+
+
+
+
+
+
+'text=Browser("thales colombia - Google").Page("Thales International Suc.").WebElement("addresWebElement").GetTOProperty("innertext")
+'print(text)
+'variable = DataTable.AddSheet ("MySheet").AddParameter("addres",text)
+'DataTable.Export ("C:\Users\Acer\Desktop\test.xls")
+'
+'count= DataTable.GetSheet ("Action1").GetRowCount
+'DataTable.GetSheet ("Global").AddParameter "New Address",""
+'
+'
+'For i = 1 To count
+'
+'	DataTable.GetSheet ("Action1").SetCurrentRow(i)
+'	oldVal= DataTable.Value ("A","Action1")
+'	DataTable.Value("New Address","Global") = oldVal
+'Next
+
